@@ -2,7 +2,7 @@ name: mpi-multinode-gradientci
 workerContainer: horovod/horovod:0.18.1-tf1.14.0-torch1.2.0-mxnet1.5.0-py3.6
 workerMachineType: p2.xlarge
 experimentEnv:
-  EPOCHS_EVAL: 10
+  EPOCHS_EVAL: 12
   EVAL_SECS: 10
   MAX_STEPS: 1000
   TRAIN_EPOCHS: 100
