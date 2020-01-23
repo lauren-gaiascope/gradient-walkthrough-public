@@ -1,0 +1,22 @@
+clusterId: clcjo828k
+command: pip install -r mnist/requirements.txt && python mnist/mnist.py
+container: tensorflow/tensorflow:1.13.1-gpu-py3
+datasets:
+  - name: fashion-mnist
+    uri: s3://ps-projects-development/teo6raui0/prda8mhcq/689c67dc/fashion-mnist.zip
+    awsAccessKeyId: AKIAVWO7J5OJTPDNO6GO
+    awsSecretAccessKey: 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
+    etag: 2c781e2c0d9ec75be40785c31800876a-2
+experimentEnv: 
+    EPOCHS_EVAL: 10
+    TRAIN_EPOCHS: 40
+    MAX_STEPS: 50000
+    EVAL_SECS: 600
+    BATCH_SIZE: 100
+    #PS_DATA_PATH: /data/fashion-mnist
+machineType: p2.xlarge
+modelType: Tensorflow
+name: single-node-dataset-test
+tensorboard: false
+#vpc: true
+#workspaceUrl: https://github.com/Paperspace/mnist-sample.git
