@@ -18,7 +18,6 @@ workflows:
             aggregate: "mean"
         defaults: #[optional]
             precision: 3
-            comment-on-pr: true
   hvd-multinode:
     steps:
       - name: "horovod-gradientci"
