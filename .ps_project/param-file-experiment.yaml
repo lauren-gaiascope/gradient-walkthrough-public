@@ -6,8 +6,8 @@ experimentEnv:
   MAX_STEPS: 1000
   TRAIN_EPOCHS: 15
 machineType: p2.xlarge
-clusterId : clcjo828k
+clusterId : cl53kbydx
 vpc: True
 modelPath: /artifacts
 modelType: Tensorflow
-name: peloton
+name: walkthrough
