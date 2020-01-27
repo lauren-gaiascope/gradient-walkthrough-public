@@ -4,7 +4,7 @@ workerMachineType: p2.xlarge
 experimentEnv:
   EPOCHS_EVAL: 12
   EVAL_SECS: 10
-  MAX_STEPS: 1000
+  MAX_STEPS: 1009
   TRAIN_EPOCHS: 100
 datasets:
   - name: coco-train2017
