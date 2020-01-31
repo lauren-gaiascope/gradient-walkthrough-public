@@ -1,23 +1,23 @@
 version: 2
 workflows:
-  single-simple:
-    steps:
-      - name: singlenode-single
-        command: experiment.run_single_node
-        paramsFile: .ps_project/param-file-experiment.yaml
-    triggers:
-        branches:
-            only: .*
-        tags:
-            only:
-            - v.*
-            - latest
-    checks: #[optional]
-        tensorflow:loss:
-            target: "0.0..0.5"
-            aggregate: "mean"
-        defaults: #[optional]
-            precision: 3
+#   single-simple:
+#     steps:
+#       - name: singlenode-single
+#         command: experiment.run_single_node
+#         paramsFile: .ps_project/param-file-experiment.yaml
+#     triggers:
+#         branches:
+#             only: .*
+#         tags:
+#             only:
+#             - v.*
+#             - latest
+#     checks: #[optional]
+#         tensorflow:loss:
+#             target: "0.0..0.5"
+#             aggregate: "mean"
+#         defaults: #[optional]
+#             precision: 3
   hvd-multinode:
     steps:
       - name: "horovod-gradientci"
@@ -25,7 +25,7 @@ workflows:
         paramsFile: .ps_project/horovod-multinode-mnist.yaml
     checks: #[optional]
         tensorflow:loss:
-            target: "0.0..0.5"
+            target: "0.0..0.3"
             aggregate: "mean"
     triggers:
         branches:
