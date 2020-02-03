@@ -88,7 +88,7 @@ callbacks = [
 
 # Horovod: save checkpoints only on worker 0 to prevent other workers from corrupting them.
 if hvd.rank() == 0:
-    checkpoint_path = os.path.join(model_dir, 'checkpoint-{epoch}.h5')
+    checkpoint_path = os.path.join(model_dir, 'checkpoint-{epoch}.ckpt')
     callbacks.append(keras.callbacks.ModelCheckpoint(checkpoint_path))
     callbacks.append(keras.callbacks.TensorBoard(log_dir=model_dir, update_freq='batch'))
 
