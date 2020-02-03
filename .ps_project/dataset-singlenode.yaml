@@ -4,8 +4,8 @@ container: tensorflow/tensorflow:1.13.1-gpu-py3
 datasets:
   - name: fashion-mnist
     uri: s3://ps-projects-development/teo6raui0/prda8mhcq/689c67dc/fashion-mnist.zip
-    awsAccessKeyId: AKIAVWO7J5OJTPDNO6GO
-    awsSecretAccessKey: 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
+    awsAccessKeyId: xxx
+    awsSecretAccessKey: xxxx
     etag: 2c781e2c0d9ec75be40785c31800876a-2
 experimentEnv: 
     EPOCHS_EVAL: 10
