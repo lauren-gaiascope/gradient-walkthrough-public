@@ -18,5 +18,3 @@ machineType: p2.xlarge
 modelType: Tensorflow
 name: single-node-dataset-test
 tensorboard: false
-#vpc: true
-#workspaceUrl: https://github.com/Paperspace/mnist-sample.git

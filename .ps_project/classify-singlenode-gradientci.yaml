@@ -1,0 +1,19 @@
+clusterId: cltge23zh
+command: python classify/classify.py
+container: pytorch/pytorch:latest
+# datasets:
+#   - name: fashion-mnist
+#     uri: s3://ps-projects-development/teo6raui0/prda8mhcq/689c67dc/fashion-mnist.zip
+#     awsAccessKeyId: xxx
+#     awsSecretAccessKey: xxxx
+#     etag: 2c781e2c0d9ec75be40785c31800876a-2
+# experimentEnv: 
+#     EPOCHS_EVAL: 10
+#     TRAIN_EPOCHS: 40
+#     MAX_STEPS: 50000
+#     EVAL_SECS: 600
+#     BATCH_SIZE: 100
+machineType: p2.xlarge
+modelType: ONNX
+name: classify-singlenode
+tensorboard: false
