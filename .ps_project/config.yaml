@@ -34,11 +34,11 @@ workflows:
     #             only:
     #             - v.*
     #             - latest
-    classify-multinode:
+    classify-singlenode:
         steps:
-            - name: "classify-singlenode-gradientci"
-                command: experiment.run_single_node
-                paramsFile: .ps_project/classify-singlenode-gradientci.yaml
+          - name: "classify-singlenode"
+            command: experiment.run_single_node
+            paramsFile: .ps_project/classify-singlenode.yaml
         triggers:
             branches:
                 only: .*
