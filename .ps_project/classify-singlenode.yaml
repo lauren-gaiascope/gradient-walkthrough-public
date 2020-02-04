@@ -7,12 +7,9 @@ container: pytorch/pytorch:latest
 #     awsAccessKeyId: xxx
 #     awsSecretAccessKey: xxxx
 #     etag: 2c781e2c0d9ec75be40785c31800876a-2
-# experimentEnv: 
-#     EPOCHS_EVAL: 10
-#     TRAIN_EPOCHS: 40
-#     MAX_STEPS: 50000
-#     EVAL_SECS: 600
-#     BATCH_SIZE: 100
+experimentEnv: 
+    TRAIN_EPOCHS: 5
+    BATCH_SIZE: 64
 machineType: p2.xlarge
 modelType: ONNX
 name: classify-singlenode

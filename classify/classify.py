@@ -97,16 +97,19 @@ class SimpleClassifyDataset(torch.utils.data.Dataset):
 import torch.nn as nn
 import torch.nn.functional as F
 
+batch_size_from_env = int(os.environ.get('BATCH_SIZE', 128))
+epochs_from_env = int(os.environ.get('TRAIN_EPOCHS', 100))
+
 def main():
     full_dataset = SimpleClassifyDataset("/storage/datasets/0001_flare_fog_rain",
                                          torchvision.transforms.Compose([Rescale((128, 128)),
                                                                          ToTensor()]))
 
     trainval_idx = int(len(full_dataset) * 0.5)
-    trainloader = torch.utils.data.DataLoader(full_dataset[0:trainval_idx], batch_size=128,
+    trainloader = torch.utils.data.DataLoader(full_dataset[0:trainval_idx], batch_size=batch_size_from_env,
                                               shuffle=True, num_workers=2)
 
-    testloader = torch.utils.data.DataLoader(full_dataset[trainval_idx:len(full_dataset)], batch_size=128,
+    testloader = torch.utils.data.DataLoader(full_dataset[trainval_idx:len(full_dataset)], batch_size=batch_size_from_env,
                                              shuffle=False, num_workers=2)
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -118,7 +121,7 @@ def main():
     #optimizer = torch.optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
     optimizer = torch.optim.Adam(net.parameters(), lr=0.01)
 
-    for epoch in range(1):  # loop over the dataset multiple times
+    for epoch in range(epochs_from_env):  # loop over the dataset multiple times
         running_loss = 0.0
         for i, data in enumerate(trainloader, 0):
             # get the inputs; # OLD: data is a list of [inputs, labels]
