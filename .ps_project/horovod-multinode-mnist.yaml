@@ -12,7 +12,7 @@ datasets:
     uri: s3://fast-ai-coco/val2017.zip    
     etag: d366be60d3dc737327160d62453e3973-98
   - name: coco-annotations-trainval2017
-    uri: https://s3.amazonaws.com/fast-ai-coco/annotations_trainval2017.zip   
+    uri: s3://fast-ai-coco/annotations_trainval2017.zip   
     etag: fc4f3b7019b3f5e1dd15a1d692a789fb-31
 workerCommand: sleep infinity
 workerCount: 2
