@@ -7,6 +7,6 @@ parameterServerContainer: tensorflow/tensorflow:1.13.1-gpu-py3
 parameterServerMachineType: p2.xlarge
 parameterServerCommand: pip install -r mnist/requirements.txt && python mnist/mnist.py
 parameterServerCount: 1
-clusterId : clcjo828k
+clusterId : cljdd692n
 vpc: True
 modelType : Tensorflow

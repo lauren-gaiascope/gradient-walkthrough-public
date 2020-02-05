@@ -6,7 +6,7 @@ experimentEnv:
   MAX_STEPS: 1000
   TRAIN_EPOCHS: 15
 machineType: p2.xlarge
-clusterId : cl53kbydx
+clusterId : cljdd692n
 vpc: True
 modelPath: /artifacts
 modelType: Tensorflow

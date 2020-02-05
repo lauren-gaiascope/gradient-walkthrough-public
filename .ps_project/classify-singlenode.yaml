@@ -1,12 +1,6 @@
-clusterId: cltge23zh
+clusterId: cljdd692n
 command: python classify/classify.py
 container: pytorch/pytorch:latest
-# datasets:
-#   - name: fashion-mnist
-#     uri: s3://ps-projects-development/teo6raui0/prda8mhcq/689c67dc/fashion-mnist.zip
-#     awsAccessKeyId: xxx
-#     awsSecretAccessKey: xxxx
-#     etag: 2c781e2c0d9ec75be40785c31800876a-2
 experimentEnv: 
     TRAIN_EPOCHS: 5
     BATCH_SIZE: 64

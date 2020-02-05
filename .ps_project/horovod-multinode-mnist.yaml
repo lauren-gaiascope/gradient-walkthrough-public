@@ -1,24 +1,19 @@
 name: mpi-multinode-gradientci
 workerContainer: horovod/horovod:0.18.1-tf1.14.0-torch1.2.0-mxnet1.5.0-py3.6
 workerMachineType: p2.xlarge
-experimentEnv:
-  EPOCHS_EVAL: 10
-  EVAL_SECS: 10
-  MAX_STEPS: 10000
-  TRAIN_EPOCHS: 100
-# datasets:
-#   - name: coco-train2017
-#     uri: https://s3.amazonaws.com/fast-ai-coco/train2017.zip    
-#     etag: 62ff7d7fbcc7e0c0604cbb0f9047ce77-2306
-#   - name: coco-test2017
-#     uri: https://s3.amazonaws.com/fast-ai-coco/test2017.zip    
-#     etag: 1d4d2301bdee781394c21718428764d2-793
-#   - name: coco-val2017
-#     uri: https://s3.amazonaws.com/fast-ai-coco/val2017.zip    
-#     etag: d366be60d3dc737327160d62453e3973-98
-#   - name: coco-annotations-trainval2017
-#     uri: https://s3.amazonaws.com/fast-ai-coco/annotations_trainval2017.zip   
-#     etag: fc4f3b7019b3f5e1dd15a1d692a789fb-31
+datasets:
+  - name: coco-train2017
+    uri: https://s3.amazonaws.com/fast-ai-coco/train2017.zip    
+    etag: 62ff7d7fbcc7e0c0604cbb0f9047ce77-2306
+  - name: coco-test2017
+    uri: https://s3.amazonaws.com/fast-ai-coco/test2017.zip    
+    etag: 1d4d2301bdee781394c21718428764d2-793
+  - name: coco-val2017
+    uri: https://s3.amazonaws.com/fast-ai-coco/val2017.zip    
+    etag: d366be60d3dc737327160d62453e3973-98
+  - name: coco-annotations-trainval2017
+    uri: https://s3.amazonaws.com/fast-ai-coco/annotations_trainval2017.zip   
+    etag: fc4f3b7019b3f5e1dd15a1d692a789fb-31
 workerCommand: sleep infinity
 workerCount: 2
 masterContainer: horovod/horovod:0.18.1-tf1.14.0-torch1.2.0-mxnet1.5.0-py3.6
@@ -26,4 +21,4 @@ masterMachineType: p2.xlarge
 masterCommand: mpirun --allow-run-as-root -np 1 --hostfile /generated/hostfile  -bind-to none -map-by slot  -x NCCL_DEBUG=INFO -mca pml ob1 -mca btl ^openib python mnist/keras_mnist.py
 masterCount: 1
 modelType: Tensorflow
-clusterId : cltge23zh
+clusterId : cljdd692n
