@@ -3,13 +3,13 @@ workerContainer: horovod/horovod:0.18.1-tf1.14.0-torch1.2.0-mxnet1.5.0-py3.6
 workerMachineType: p2.xlarge
 datasets:
   - name: coco-train2017
-    uri: https://s3.amazonaws.com/fast-ai-coco/train2017.zip    
+    uri: s3://fast-ai-coco/train2017.zip    
     etag: 62ff7d7fbcc7e0c0604cbb0f9047ce77-2306
   - name: coco-test2017
-    uri: https://s3.amazonaws.com/fast-ai-coco/test2017.zip    
+    uri: s3://fast-ai-coco/test2017.zip    
     etag: 1d4d2301bdee781394c21718428764d2-793
   - name: coco-val2017
-    uri: https://s3.amazonaws.com/fast-ai-coco/val2017.zip    
+    uri: s3://fast-ai-coco/val2017.zip    
     etag: d366be60d3dc737327160d62453e3973-98
   - name: coco-annotations-trainval2017
     uri: https://s3.amazonaws.com/fast-ai-coco/annotations_trainval2017.zip   
