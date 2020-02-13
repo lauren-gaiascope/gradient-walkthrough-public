@@ -18,15 +18,3 @@ workflows:
                 only:
                 - v.*
                 - latest
-    hvd-multinode:
-        steps:
-          - name: "horovod-gradientci"
-            command: experiment.run_mpi_multi_node
-            paramsFile: .ps_project/horovod-multinode-mnist.yaml
-        triggers:
-            branches:
-                only: .*
-            tags:
-                only:
-                - v.*
-                - latest
